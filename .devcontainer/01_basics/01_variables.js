@@ -17,4 +17,6 @@ console.log(undefinedvar);
 const newvar = 12345;
 //printing many values together we will use console.table([val1, val2, val3]);
 console.table([accountId, accountEmail, accountPassword, accountCity, newvar]);
+console.log("Completed without error");
+//we can use or skip semicolon ;
 
