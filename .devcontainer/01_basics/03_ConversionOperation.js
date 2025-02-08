@@ -1,20 +1,19 @@
-/*
 // conversion to number
 
-let score = true;
+// let score = true;
 
-console.log(typeof score);
-let numberScore = Number(score); // format to typecast by using wrapper class
+// console.log(typeof score);
+// let numberScore = Number(score); // format to typecast by using wrapper class (capital letter of primitive datatypes)
 
-console.log(typeof numberScore);
-console.log(numberScore);
+// console.log(typeof numberScore);
+// console.log(numberScore);
 
 // "33" => 33
 // "33abc" => NaN
 // true => 1
 // false => 0
+// "" => 0 (Because it is an empty string)
 
-*/
 /*
 // conversion to string
 
@@ -33,12 +32,12 @@ console.log(stringVal);
 
 // conversion into boolean
 
-let someVal = "abhineet";
-console.log(typeof someVal);
+// let someVal = " abhineet ";
+// console.log(typeof someVal);
 
-let boolVal = Boolean(someVal);
-console.log(typeof boolVal);
-console.log(boolVal);
+// let boolVal = Boolean(someVal);
+// console.log(typeof boolVal);
+// console.log(boolVal);
 
 // non zero number e.g. 34, 19, -21 => true
 // 0 => false

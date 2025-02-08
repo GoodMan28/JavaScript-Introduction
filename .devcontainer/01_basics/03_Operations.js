@@ -33,7 +33,7 @@ let negval = -val;
 // console.log(-false); // o/p: -0
 // console.log(-0); // o/p: -0
 
-// in JavaScript +0 and -0 both exist
+// in JavaScript 0 and -0 both exist
 
 // concatenating the strings
 // let str1 = "Hello";

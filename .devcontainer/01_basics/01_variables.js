@@ -8,9 +8,8 @@ var accountPassword = "123456";
 // prefer not to use var because it has no control over block and functional scope
 // change in one place can change the value in the variable declared under var
 
-accountCity = "Bokaro"; //we can also declare a variable without using any keyword but that is not specified
+accountCity = "Bokaro"; //we can also declare a variable without using any keyword(like var or let) but that is not specified
 console.log(accountCity);
-
 //if we declare a variable but dont initailize it then it's default value is undefined
 let undefinedvar;
 console.log(undefinedvar);
