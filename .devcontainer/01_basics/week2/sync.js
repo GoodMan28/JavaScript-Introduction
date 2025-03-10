@@ -19,7 +19,7 @@ console.log(sum3);
 
 
 // Here when the control reaches the line function definiton then the interpreter doesn't execute
-// the function. It just moves away from the function body 
+// the function body. It just moves away from the function body 
 // Now the control reaches the line 10 where then the function call appears and interpreter runs the 
 // function body where the thread sequentially executes the function body
 // and the next part is reached sequentially

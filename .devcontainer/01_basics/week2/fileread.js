@@ -12,13 +12,23 @@
 // A "require" statement lets you import code/functions export from another file/module.
 
 const fs = require("fs") // this is the import/require statement
-let contents1 = fs.readFileSync(".devcontainer/01_basics/week2/a.txt","utf-8"); // the first arg is the filename and the 
+let contents1 = fs.readFileSync(".devcontainer/01_basics/week2/a.txt"); // the first arg is the filename and the 
 // second arg is the CHAR ENCODING STANDARD used
+
+// The character encoding (e.g., 'utf8'): If not provided, the function returns a Buffer
+
+
+// Buffer: (JavaScript (in browsers) handles strings in Unicode, 
+// which isn't efficient for handling raw binary data like images, files, or network packets. 
+// Node.js introduces Buffers to manage raw binary data efficiently.)
 console.log(contents1);
 
 // printing the contents of other file along with the previous file synchronously
 let contents2 = fs.readFileSync(".devcontainer/01_basics/week2/b.txt", "utf-8");
 console.log(contents2);
 
+
+// Synchronous (readFileSync): Blocks further execution until reading is complete. 
+// Hence syncronous reading is required
 
 
