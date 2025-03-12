@@ -39,3 +39,41 @@ let rect2 = {
 console.log(rect2.area());
 console.log(rect.area());
 
+
+
+// -------------------------------------------------------------------------------------------------
+// ------------------------------Some more classes--------------------------------------------------
+
+
+// 1. Date
+const now = new Date();
+console.log(now.toISOString());
+console.log(now.getFullYear());
+console.log(now.getMonth()); // month of year 0-based
+console.log(now.getDate());
+
+// 2. Map - Another form of key-value pair in the JS. Get-Set for getting and updating
+const map = new Map();
+map.set('name', 'Alice');
+map.set('age', 30);
+//display
+console.log(map.get('name'));
+// update
+map.set('name', 'Bob');
+console.log(map.get('name'));
+
+
+// Another form of key-value pair
+const map2 = {
+    firstName: 'Alice',
+    age: 30
+}
+// display
+console.log(map2.firstName);
+// update
+map2.firstName = "Bob";
+console.log(map2.firstName);
+
+
+let str = new String("ABhinEEt");
+console.log(str.toLocaleLowerCase());
