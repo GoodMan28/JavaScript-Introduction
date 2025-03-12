@@ -45,7 +45,7 @@ sum = 0;
 for(i = 0; i < 1000000000; i++) {
     sum++;
 }
-console.log(sum); // these all are CPU intensive tasks and hence the thread is busy for logging the pending tasks
+console.log(sum); // these all are CPU intensive tasks and hence the thread is busy for calcuating the sum
 
 
 // Yes, exactly! Even if the file is completely read while the for loop is running, the file content will not be logged immediately.
