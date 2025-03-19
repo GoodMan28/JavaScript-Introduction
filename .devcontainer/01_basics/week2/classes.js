@@ -56,20 +56,27 @@ console.log(now.getDate());
 const map = new Map();
 map.set('name', 'Alice');
 map.set('age', 30);
+map.set('gender', 'Male');
 //display
 console.log(map.get('name'));
 // update
 map.set('name', 'Bob');
 console.log(map.get('name'));
+console.log(map.get('gender'));
 
 
 // Another form of key-value pair
 const map2 = {
     firstName: 'Alice',
-    age: 30
+    age: 30,
+    gender: 'Female'
 }
 // display
 console.log(map2.firstName);
+console.log(map2.age);
+console.log(map2.gender);
+
+
 // update
 map2.firstName = "Bob";
 console.log(map2.firstName);

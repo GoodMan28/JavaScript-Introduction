@@ -7,15 +7,16 @@
 // Examples are:
 // 1. Reading a file: that comes under the category of I/O operation from disk
 // 2. HTTP Requests: Requesting resources from the URL
-// 3. Starting a clock: eg. wait(1) this also takes a lot of time
+// 3. Starting a clock: eg. wait(1) this also takes a lot of time i.e. 1 sec.
 
 // A "require" statement lets you import code/functions export from another file/module.
 
 const fs = require("fs") // this is the import/require statement
-let contents1 = fs.readFileSync(".devcontainer/01_basics/week2/a.txt"); // the first arg is the filename and the 
+let contents1 = fs.readFileSync(".devcontainer/01_basics/week2/a.txt", "utf8"); // the first arg is the filename and the 
 // second arg is the CHAR ENCODING STANDARD used
 
-// The character encoding (e.g., 'utf8'): If not provided, the function returns a Buffer
+// The character encoding (e.g., 'utf8'): If not provided, the function returns a Buffer i.e.
+// all characters are shown in ascii
 
 
 // Buffer: (JavaScript (in browsers) handles strings in Unicode, 

@@ -1,11 +1,18 @@
 // Here, we pass in a function as an argument
 // This function is called a callback since the function gets called back when the file is read 
 
+const { log } = require("console");
 let fs = require("fs")
 
-// // Method 1
-fs.readFile(".devcontainer/01_basics/week2/b.txt", "utf-8", function (err, contents) {
-    console.log(contents);
+// // Method 1: Using anonymous function passed as the argument
+fs.readFile(".devcontainer/01_basics/week2/a.txt", "utf-8", function (err, contents) {
+    if(err) {
+        console.log("Error is: "+ err);
+    }
+    else {
+        console.log("No error, the content of the file is: ");
+        console.log(contents);
+    }
 });
 
 // Method 2
@@ -16,12 +23,13 @@ function callback(err, contents) {
         console.log("Error is: " + err);
     }
     else {
+        console.log("No error, the content of the file is: ");
         console.log(contents);
     }
 }
 // this function takes a function name as an argument
 // the readfile function calls the function when the file reading is complete
-fs.readFile(".devcontainer/01_basics/week2/a.txt", "utf-8", callback);
+fs.readFile(".devcontainer/01_basics/week2/b.txt", "utf-8", callback);
 
 
 // Method 3: There is a method where we call run a callback after certain time
@@ -40,7 +48,7 @@ setTimeout(run, 5000); // setTimeout is another asynchronous function that execu
 
 console.log("It is a normal log statement and will execute the first");
  // This can be run even before all the statements above
-// since all the tasks are I/O bound tasks and take a few time to run (i.e. read a file)
+// since all the tasks are I/O bound tasks and above task take a few time to run (i.e. read a file)
 sum = 0;
 for(i = 0; i < 1000000000; i++) {
     sum++;
@@ -54,4 +62,5 @@ console.log(sum); // these all are CPU intensive tasks and hence the thread is b
 
 // The event loop is blocked due to the long-running for loop.
 // Asynchronous tasks (like fs.readFile) cannot execute their callbacks until the event loop is free.
+// Find the answer to the above question from JS architecture code
 // Once the for loop finishes, only then the event loop processes pending tasks, including the file read callback.
