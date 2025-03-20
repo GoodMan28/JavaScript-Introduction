@@ -66,7 +66,7 @@ setTimeoutPromisified2().then(main2);
 
 // This creates a Promise object.
 // The executor function waitFor3S2(resolve2) is immediately executed.
-// The Promise constructor automatically provides resolve2
+// The Promise constructor automatically provides as argument to the executer function
 
 // When calling new Promise(waitFor3S2), JavaScript automatically injects resolve2 into waitFor3S2(resolve2).
 // You don’t need to define resolve2, because JavaScript handles it internally.
@@ -78,5 +78,22 @@ setTimeoutPromisified2().then(main2);
 
 // This changes the Promise state from "pending" → "resolved".
 // If .then(callbackFunction) was attached, the callback function would be executed.
+
+
+
+// 2. setTimeoutPromisified2().then(main2);
+// In this method the then resolve is passing what value to the then() function. 
+// because in the read file example we saw that the resolve is passing the contents of the read file
+
+// After 5 seconds, resolve2() is called, but without any arguments.
+// This means the Promise resolves with undefined.
+// Now, .then(main2) is executed.
+// This is equivalent to:
+
+
+// setTimeoutPromisified2().then(function(value) {
+//     main2(value);
+// });
+
 
 

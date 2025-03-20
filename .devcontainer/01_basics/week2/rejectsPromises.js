@@ -1,5 +1,5 @@
 const fs = require("fs");
-
+// Here we will be seeing the promisified verision of readFile 
 function readFilePromisified(filePath) {
   return new Promise(function (resolve, reject) {
     fs.readFile(".devcontainer/01_basics/week2/a.txt", "utf-8", function (err, data) {
