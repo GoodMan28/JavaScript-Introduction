@@ -9,7 +9,7 @@
     <input type="text"></input>
     <button onclick="addTodo()">Add Todo</button>
 
-    <div>
+    <div id="topDiv">
         <!-- Here we will insert each task -->
     </div>
 </body>
@@ -23,28 +23,35 @@
         render();
     }
 
-    function deleteTodo() {
+    function deleteTodo(index) {
         // delete the elements and then render
-
-        render()
+        // alert(`Render from delete todo is called for the s.no ${index + 1} i.e. id: ${index}`); // for checking purposes
+        // now we will use the splice function from which we will remove that particular
+        // index and then again render
+        todos.splice(index,1);
+        render();
     }
 
     function render() {
-        document.querySelector("div").innerHTML = ""; // clearing the screen for the div element each time
+        // everytime we render, before that we should clear the screen first
+        document.getElementById("topDiv").innerHTML = "";
         for(let i = 0; i < todos.length; i++) {
             let todo = todos[i];
-            let divEl = document.createElement("div"); // here we will insert the h1 and the button element
-            let h1El = document.createElement("h1"); 
+            // now creating the span element and the button element 
+            let spanEl = document.createElement("span");
             let buttonEl = document.createElement("button");
-            h1El.innerHTML = todo.title;
+            // now giving contents to the span and the buttons
+            spanEl.innerHTML = `${i+1}. ${todo.title}`;
             buttonEl.innerHTML = "Delete";
-
-            // appending these to the div element
-            divEl.appendChild(h1El);
+            buttonEl.setAttribute("onclick", `deleteTodo(${i})`)
+            // nwo creating the div element where we need to append these
+            let divEl = document.createElement("div");
+            divEl.appendChild(spanEl);
             divEl.appendChild(buttonEl);
+            divEl.setAttribute("id", i); // setting the index as the id so that delete becomes easy
 
-            // appending the divEl to the body
-            document.querySelector("div").appendChild(divEl);
+            // now appending the divEl to the given div i.e. "topDiv"
+            document.getElementById("topDiv").appendChild(divEl);
         }
     }
 </script>

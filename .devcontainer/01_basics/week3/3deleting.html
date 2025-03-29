@@ -28,13 +28,9 @@
 
 <script>
     function deleteTask(idNum) {
-      // selecting the idNum element
-      let delElement = document.getElementById(`todo-${idNum}`);
-      // deleting the child element with the help of it's parent element
-      delElement.parentElement.removeChild(delElement);
-      console.log("Deleted the element with id: " + "todo-" + idNum);
-      
-    } 
+      let delItem = document.getElementById(`todo-${idNum}`); // getting that element which we need to delete
+      delItem.parentElement.removeChild(delItem); // selecting the parent element of delItem and then remove the child of that parent item
+    }
 </script>
 
 </html>
