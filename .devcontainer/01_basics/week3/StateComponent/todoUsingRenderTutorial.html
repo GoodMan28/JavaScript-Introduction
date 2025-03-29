@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"></input>
+    <button onclick="addTodo()">Add Todo</button>
+
+    <div>
+        <!-- Here we will insert each task -->
+    </div>
+</body>
+<script>
+    let todos = [];
+    function addTodo() {
+        // let text = document.querySelector("input").value;
+        todos.push({
+            title: document.querySelector("input").value
+        });
+        render();
+    }
+
+    function deleteTodo() {
+        // delete the elements and then render
+
+        render()
+    }
+
+    function render() {
+        document.querySelector("div").innerHTML = ""; // clearing the screen for the div element each time
+        for(let i = 0; i < todos.length; i++) {
+            let todo = todos[i];
+            let divEl = document.createElement("div"); // here we will insert the h1 and the button element
+            let h1El = document.createElement("h1"); 
+            let buttonEl = document.createElement("button");
+            h1El.innerHTML = todo.title;
+            buttonEl.innerHTML = "Delete";
+
+            // appending these to the div element
+            divEl.appendChild(h1El);
+            divEl.appendChild(buttonEl);
+
+            // appending the divEl to the body
+            document.querySelector("div").appendChild(divEl);
+        }
+    }
+</script>
+</html>
