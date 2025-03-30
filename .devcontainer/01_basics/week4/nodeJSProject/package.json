@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "chalk": "^5.4.1"
+    "chalk": "^5.4.1" // We don't need to push the whole bulky node modules folder to github. 
+    // The person who sees the package can simply run "npm install" in the cli anc all the dependencies will be installed
+
   }
 }
