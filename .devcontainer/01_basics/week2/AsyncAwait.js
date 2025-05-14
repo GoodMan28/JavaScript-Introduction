@@ -1,6 +1,8 @@
 // The async and await syntax in JavaScript provides a way to write asynchronous code 
 // that looks and behaves like synchronous code, making it easier to read and maintain
 
+const { log } = require("console");
+
 // Under the hood the async and await syntax have promises running under them
 
 // async/await is essentially syntactic sugar on top of Promises
@@ -30,3 +32,20 @@ async function solve() {
 solve();
 
 console.log("After async calls since the thread has supposedly seems to stuck");
+
+// setTimeoutPromisified(1000).then(
+//     function () {
+//         console.log("Hi after first 1000");
+//         setTimeoutPromisified(2000).then(
+//             function () {
+//                 console.log("Hi after next 2000");
+//                 setTimeoutPromisified(3000).then(
+//                     function () {
+//                         console.log("Final Hi after next 3000");
+//                     }
+//                 )
+//             }
+//         )
+//     }
+// )
+// to hide the complexity of this one we use the above one

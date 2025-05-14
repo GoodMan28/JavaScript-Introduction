@@ -12,7 +12,11 @@
 // A "require" statement lets you import code/functions export from another file/module.
 
 const fs = require("fs") // this is the import/require statement
-let contents1 = fs.readFileSync("/.devcontainer/01_basics/week2/a.txt", "utf8"); // the first arg is the filename and the 
+const path = require("path"); // this will help us to resolve the correct path of the file
+
+let path1 = path.join(__dirname, "a.txt");
+let path2 = path.join(__dirname, "b.txt");
+let contents1 = fs.readFileSync(path1, "utf8"); // the first arg is the filename and the 
 // second arg is the CHAR ENCODING STANDARD used
 
 // The character encoding (e.g., 'utf8'): If not provided, the function returns a Buffer i.e.
@@ -25,7 +29,7 @@ let contents1 = fs.readFileSync("/.devcontainer/01_basics/week2/a.txt", "utf8");
 console.log(contents1);
 
 // printing the contents of other file along with the previous file synchronously
-let contents2 = fs.readFileSync("/.devcontainer/01_basics/week2/b.txt", "utf-8");
+let contents2 = fs.readFileSync(path2, "utf-8");
 console.log(contents2);
 
 

@@ -2,9 +2,9 @@ const fs = require("fs");
 // Here we will be seeing the promisified verision of readFile 
 function readFilePromisified(filePath) {
   return new Promise(function (resolve, reject) {
-    fs.readFile(".devcontainer/01_basics/week2/a.txt", "utf-8", function (err, data) {
+    fs.readFile(filePath, "utf-8", function (err, data) {
       if (err) {
-        reject("Error while reading file");
+        reject(err);
       } else {
         resolve(data);
       }
@@ -12,12 +12,12 @@ function readFilePromisified(filePath) {
   });
 }
 
-function onDone(data) {
-  console.log(data);
+function onDone(value) {
+  console.log("The content in the file is : " + value);
 }
 
-function onError(err) {
-  console.log("Error: " + err);
+function onError(errMess) {
+  console.log("Error is " + errMess); // this message is given by the reject function
 }
 
-readFilePromisified("a.txt").then(onDone).catch(onError);
+readFilePromisified("word.txt").then(onDone).catch(onError);

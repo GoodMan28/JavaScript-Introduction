@@ -30,10 +30,10 @@
         render();
     }
 
-    function deleteTodo() {
+    function deleteTodo(index) {
         // delete the elements and then render
-
-        render()
+        todos.splice(index, 1);
+        render();
     }
 
     function render() {
@@ -41,21 +41,22 @@
         let ordLi = document.querySelector("ol");
         // clearing the previous input of the ol
         ordLi.innerHTML = "";
-        alert("Clear Scren called");
+        // alert("Clear Screen called");
         // Looping through all of the todos element and indiv all the buttons and spans
-        for(let todo of todos) {
+        for(let i = 0; i < todos.length; i++) {
             // creating an 'li' for the todo
             let listEl = document.createElement("li");
             // now we will create a span element and a button element and append to the listEl
             let spanEl = document.createElement("span");
             let buttonEl = document.createElement("button");
-            spanEl.innerHTML = todo;
+            buttonEl.setAttribute("onclick", `deleteTodo(${i})`)
+            spanEl.innerHTML = todos[i];
             buttonEl.innerHTML = "Delete";
 
             // appending these elements to the list Element
             listEl.appendChild(spanEl);
             listEl.appendChild(buttonEl);
-
+            listEl.setAttribute("id", `todo-${i}`);
             // appending the list Element to the ordered list now
             ordLi.appendChild(listEl);
         }

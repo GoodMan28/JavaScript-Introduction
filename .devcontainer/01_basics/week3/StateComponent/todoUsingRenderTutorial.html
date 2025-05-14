@@ -11,7 +11,7 @@
 
     <div id="topDiv">
         <!-- Here we will insert each task -->
-    </div>
+    </div>                                                                  
 </body>
 <script>
     let todos = [];
@@ -43,7 +43,7 @@
             // now giving contents to the span and the buttons
             spanEl.innerHTML = `${i+1}. ${todo.title}`;
             buttonEl.innerHTML = "Delete";
-            buttonEl.setAttribute("onclick", `deleteTodo(${i})`)
+            buttonEl.setAttribute("onclick", `deleteTodo(${i})`); // we are keeping the "i" in the deleteTodo function because everytime we render after deleting or inserting the "i" updates accordingly
             // nwo creating the div element where we need to append these
             let divEl = document.createElement("div");
             divEl.appendChild(spanEl);

@@ -1,5 +1,5 @@
 // A Promise in JavaScript is an object that represents the eventual completion (or failure) 
-// of an asynchronous operation and its resulting value.
+// of an asynchronous operation and its resulting(value).
 
 function waitFor3S(resolve) {
     setTimeout(resolve, 3000);
@@ -23,7 +23,7 @@ setTimeoutPromisified().then(main);
 
 function setTimeoutPromisified2() {
     return new Promise(function waitfor3S2(resolve2){
-        setTimeout(resolve2,5000)
+        setTimeout(resolve2,5000); // here the promise is resolved after 5 seconds
     });
 }
 
@@ -31,7 +31,9 @@ function main2() {
     console.log("Main2 is called after 5 sec");
 }
 
-setTimeoutPromisified2().then(main2);
+setTimeoutPromisified2().then(function (value) {
+    main2(value);
+});
 
 // We can clearly understand the method2 since we can easily see how is the promise resolved and
 // how the executer function is getting the resolve argument 
@@ -82,7 +84,7 @@ setTimeoutPromisified2().then(main2);
 
 
 // 2. setTimeoutPromisified2().then(main2);
-// In this method the then resolve is passing what value to the then() function. 
+// In this method the then resolve is passing what(value) to the then() function. 
 // because in the read file example we saw that the resolve is passing the contents of the read file
 
 // After 5 seconds, resolve2() is called, but without any arguments.
@@ -91,9 +93,10 @@ setTimeoutPromisified2().then(main2);
 // This is equivalent to:
 
 
-// setTimeoutPromisified2().then(function(value) {
-//     main2(value);
+// setTimeoutPromisified2().then(function (value)) {
+//     main2(value));
 // });
 
+// the(value) here is passed from the resolve to the main2 function
 
 
