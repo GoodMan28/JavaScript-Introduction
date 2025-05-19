@@ -65,3 +65,7 @@ else if(options.tick != undefined) {
 
 // now writing the file with the json file
 fs.writeFileSync(filepath, JSON.stringify(todoData, null, 2));
+
+// -------------------------------------------------------------------------------------------------------
+// FOR MORE INFO 
+// check this thread for the last 3 questions : https://chatgpt.com/share/682b9211-7714-8013-bfae-8ac1cce94b59
