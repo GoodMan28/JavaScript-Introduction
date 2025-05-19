@@ -9,7 +9,7 @@ const { program } = require('commander'); // importing the commander library
 
 program 
 
-    .option('--first') // boolean flag option i.e. if it is provided then true else false will be 
+    .option('--first') // boolean flag option i.e. if it is provided then true else will be false  
     .option('-s, --separator <char>') // this is a seperator option (in either long flag or short flag) and takes value
     .argument('<string>'); // The argument, which is a string
 
@@ -17,7 +17,7 @@ program.parse(); // this parses all the options and arguments from the CLI
 
 const options = program.opts(); // this extracts all the options as objects
 
-const limit = options.first ? 1 : undefined; 
+const limit = options.first ? 1 : undefined;
 // i.e. when '--first' option is provided then 1 will be the limit i.e. the string will only be split once 
 // since this will be given as the second argument to the split function
 // else the limit will be undefined so the string will be split in all parts
